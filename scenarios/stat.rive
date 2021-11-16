@@ -1,0 +1,11 @@
+! version = 2.0
+
+// There will be no space between "programmed" and "using"!
++ *
+- Привет. Что хочется?{topic=change_stat}<%button=Добавить статистики%><%button=Другое%>
+
+
+> topic change_stat
+  + добавить статистики
+  - Ок, какую статистику хочешь поправить? <%get_data=statistic_list%>
+< topic
