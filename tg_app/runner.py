@@ -23,7 +23,7 @@ def check_last_updates(msg):
 def is_working_time():
     now = datetime.now(timezoneSamara)
     if now.weekday() <= 4:
-        if 10 < now.hour < 19:
+        if 10 <= now.hour < 19:
             return True
     return False
 
