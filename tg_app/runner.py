@@ -20,10 +20,11 @@ def check_last_updates(msg):
     return True
 
 
-def is_working_time():
-    now = datetime.now(timezoneSamara)
-    if now.weekday() <= 4:
-        if 10 <= now.hour < 19:
+def is_working_time(date_time):
+    if date_time.weekday() <= 4:
+        if (9 == date_time.hour and 40 <= date_time.minute) or \
+                10 <= date_time.hour < 19 or \
+                (19 == date_time.hour and date_time.minute < 20):
             return True
     return False
 
@@ -37,7 +38,7 @@ def send_welcome(message):
 @tg_bot.message_handler(func=check_last_updates)
 def echo_all(message):
     print('kek')
-    if not is_working_time():
+    if not is_working_time(datetime.now(timezoneSamara)):
         tg_bot.reply_to(message, TEXT_MESSAGE)
 
 
