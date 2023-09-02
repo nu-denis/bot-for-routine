@@ -16,7 +16,7 @@ def check_last_updates(msg):
     chat_id = msg.chat.id
     print('info', chat_id, message_id)
     if chat_id in last_message_id_by_chat_id:
-        return last_message_id_by_chat_id[chat_id] <= message_id
+        return last_message_id_by_chat_id[chat_id] < message_id
     return True
 
 
