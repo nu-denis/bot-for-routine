@@ -35,7 +35,8 @@ def send_welcome(message):
         tg_bot.reply_to(message, 'Привет 👋\nЯ "Простой бот", умею следить за сообщениями в нерабочее время')
 
 
-@tg_bot.message_handler(func=check_last_updates)
+@tg_bot.message_handler(func=check_last_updates, content_types=['text', 'audio', 'photo', 'voice', 'video',
+                                                                'document', 'text', 'location', 'contact', 'sticker'])
 def echo_all(message):
     print('kek')
     if not is_working_time(datetime.now(timezoneSamara)):
